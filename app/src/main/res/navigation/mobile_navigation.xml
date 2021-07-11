@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationGraph"
+    app:startDestination="@id/navigation_feed">
+
+    <fragment
+        android:id="@+id/navigation_photo"
+        android:name="com.example.picturemanagersoheib.ui.fragments.PhotoPageFragment"
+        android:label="@string/photo_label"
+        tools:layout="@layout/photo_page_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.picturemanagersoheib.ui.fragments.ProfilePageFragment"
+        android:label="@string/account_label"
+        tools:layout="@layout/user_page_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_feed"
+        android:name="com.example.picturemanagersoheib.ui.fragments.FeedPageFragment"
+        android:label="@string/feed_label"
+        tools:layout="@layout/feed_page_fragment" />
+</navigation>

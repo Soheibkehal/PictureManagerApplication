@@ -1,0 +1,742 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>back documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">back documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+<ol class="breadcrumb">
+  <li>Miscellaneous</li>
+  <li>Variables</li>
+</ol>
+
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#checkCredentialFields" title="src/user/helpers.ts"><b>checkCredentialFields</b>&nbsp;&nbsp;&nbsp;(src/.../helpers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#fileMocked" title="src/mocks/image.ts"><b>fileMocked</b>&nbsp;&nbsp;&nbsp;(src/.../image.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getHostImage" title="src/image/helpers.ts"><b>getHostImage</b>&nbsp;&nbsp;&nbsp;(src/.../helpers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getImagePermissionsDetails" title="src/image/helpers.ts"><b>getImagePermissionsDetails</b>&nbsp;&nbsp;&nbsp;(src/.../helpers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getMetadata" title="src/image/helpers.ts"><b>getMetadata</b>&nbsp;&nbsp;&nbsp;(src/.../helpers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getPermissionData" title="src/image/helpers.ts"><b>getPermissionData</b>&nbsp;&nbsp;&nbsp;(src/.../helpers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#imageMocked" title="src/mocks/image.ts"><b>imageMocked</b>&nbsp;&nbsp;&nbsp;(src/.../image.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#imagesMocked" title="src/mocks/image.ts"><b>imagesMocked</b>&nbsp;&nbsp;&nbsp;(src/.../image.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#imageUploadConfig" title="src/image/helpers.ts"><b>imageUploadConfig</b>&nbsp;&nbsp;&nbsp;(src/.../helpers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#jwtConstants" title="src/auth/constants.ts"><b>jwtConstants</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#listUsersMocked" title="src/mocks/user.ts"><b>listUsersMocked</b>&nbsp;&nbsp;&nbsp;(src/.../user.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#permissionsMocked" title="src/mocks/imagePermissions.ts"><b>permissionsMocked</b>&nbsp;&nbsp;&nbsp;(src/.../imagePermissions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setFileFilter" title="src/image/helpers.ts"><b>setFileFilter</b>&nbsp;&nbsp;&nbsp;(src/.../helpers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setFilename" title="src/image/helpers.ts"><b>setFilename</b>&nbsp;&nbsp;&nbsp;(src/.../helpers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setTypeormRepoMocked" title="src/mocks/typeorm.ts"><b>setTypeormRepoMocked</b>&nbsp;&nbsp;&nbsp;(src/.../typeorm.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#userMocked" title="src/mocks/user.ts"><b>userMocked</b>&nbsp;&nbsp;&nbsp;(src/.../user.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#usersMocked" title="src/mocks/user.ts"><b>usersMocked</b>&nbsp;&nbsp;&nbsp;(src/.../user.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/user/helpers.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkCredentialFields"></a>
+                        <span class="name">
+                            <b>
+                            checkCredentialFields</b>
+                            <a href="#checkCredentialFields"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(
+  userDto: CreateUserDto | UpdateUserDto,
+) &#x3D;&gt; {
+  const loginLength &#x3D; userDto.login.length;
+  if (loginLength &lt; 2 || loginLength &gt; 50)
+    throw new HttpException(&#x27;Login length is incorrect&#x27;, HttpStatus.FORBIDDEN);
+
+  const pwdLength &#x3D; userDto.password.length;
+  if (pwdLength &lt; 8 || pwdLength &gt; 50)
+    throw new HttpException(
+      &#x27;Password length is incorrect&#x27;,
+      HttpStatus.FORBIDDEN,
+    );
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/mocks/image.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fileMocked"></a>
+                        <span class="name">
+                            <b>
+                            fileMocked</b>
+                            <a href="#fileMocked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Express.Multer.File</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  filename: &#x27;test.png&#x27;,
+  originalname: &#x27;test.png&#x27;,
+  fieldname: &#x27;test&#x27;,
+  encoding: &#x27;&#x27;,
+  mimetype: &#x27;jpeg&#x27;,
+  size: 30439,
+  stream: null,
+  destination: &#x27;./test&#x27;,
+  path: &#x27;./test&#x27;,
+  buffer: null,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imageMocked"></a>
+                        <span class="name">
+                            <b>
+                            imageMocked</b>
+                            <a href="#imageMocked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  id: 0,
+  name: &#x27;test.png&#x27;,
+  timestamp: new Date(),
+  metadata: &#x27;&#x27;,
+  userId: 0,
+  imagePermissions: [],
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imagesMocked"></a>
+                        <span class="name">
+                            <b>
+                            imagesMocked</b>
+                            <a href="#imagesMocked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[imageMocked]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/image/helpers.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getHostImage"></a>
+                        <span class="name">
+                            <b>
+                            getHostImage</b>
+                            <a href="#getHostImage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>async (imageId: number, hostId: number) &#x3D;&gt; {
+  const hostImage &#x3D; await getRepository(Image)
+    .createQueryBuilder(&#x27;image&#x27;)
+    .where(&#x27;image.id &#x3D; :imageId&#x27;, { imageId })
+    .andWhere(&#x27;image.userId &#x3D; :hostId&#x27;, { hostId })
+    .getOne();
+
+  if (!hostImage) {
+    throw new HttpException(&#x27;Your image is not found&#x27;, HttpStatus.NOT_FOUND);
+  }
+  return hostImage;
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getImagePermissionsDetails"></a>
+                        <span class="name">
+                            <b>
+                            getImagePermissionsDetails</b>
+                            <a href="#getImagePermissionsDetails"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>async (id: number) &#x3D;&gt; {
+  const imagePermissions &#x3D; await getRepository(ImagePermissions)
+    .createQueryBuilder(&#x27;imagePermissions&#x27;)
+    .innerJoin(&#x27;imagePermissions.image&#x27;, &#x27;image&#x27;)
+    .leftJoinAndSelect(&#x27;imagePermissions.user&#x27;, &#x27;user&#x27;)
+    .where(&#x27;image.id &#x3D; :id&#x27;, { id })
+    .getMany();
+
+  return imagePermissions;
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getMetadata"></a>
+                        <span class="name">
+                            <b>
+                            getMetadata</b>
+                            <a href="#getMetadata"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(file: Express.Multer.File) &#x3D;&gt; {
+  const dimensions &#x3D; sizeOf(file.path);
+  return JSON.stringify({ ...file, ...dimensions });
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getPermissionData"></a>
+                        <span class="name">
+                            <b>
+                            getPermissionData</b>
+                            <a href="#getPermissionData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>async (imageId: number, userId: number) &#x3D;&gt; {
+  const image &#x3D; await getRepository(Image)
+    .createQueryBuilder(&#x27;image&#x27;)
+    .where(&#x27;image.id &#x3D; :id&#x27;, { id: imageId })
+    .getOne();
+
+  const user &#x3D; await getRepository(User)
+    .createQueryBuilder(&#x27;user&#x27;)
+    .where(&#x27;user.id &#x3D; :id&#x27;, { id: userId })
+    .getOne();
+
+  if (!user || !image)
+    throw new HttpException(&#x27;Image or user not found&#x27;, HttpStatus.NOT_FOUND);
+
+  return { user, image };
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imageUploadConfig"></a>
+                        <span class="name">
+                            <b>
+                            imageUploadConfig</b>
+                            <a href="#imageUploadConfig"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  storage: diskStorage({
+    destination: &#x27;./uploads&#x27;,
+    filename: setFilename,
+  }),
+  fileFilter: setFileFilter,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setFileFilter"></a>
+                        <span class="name">
+                            <b>
+                            setFileFilter</b>
+                            <a href="#setFileFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(
+  _req: e.Request,
+  file: Express.Multer.File,
+  callback: (error: Error, acceptFile: boolean) &#x3D;&gt; void,
+) &#x3D;&gt; {
+  if (!file.originalname.match(/\.(jpg|jpeg|png|gif|JPG)$/)) {
+    return callback(
+      new HttpException(
+        &#x27;Only image files are allowed!&#x27;,
+        HttpStatus.BAD_REQUEST,
+      ),
+      false,
+    );
+  }
+
+  callback(null, true);
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setFilename"></a>
+                        <span class="name">
+                            <b>
+                            setFilename</b>
+                            <a href="#setFilename"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(
+  _req: e.Request,
+  file: Express.Multer.File,
+  callback: (error: Error, filename: string) &#x3D;&gt; void,
+) &#x3D;&gt; {
+  const name &#x3D; file.originalname.split(&#x27;.&#x27;)[0];
+  const fileExtName &#x3D; extname(file.originalname);
+  const randomName &#x3D; Array(4)
+    .fill(null)
+    .map(() &#x3D;&gt; Math.round(Math.random() * 10).toString(10))
+    .join(&#x27;&#x27;);
+  callback(null, &#x60;${name}${randomName}${fileExtName}&#x60;);
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/auth/constants.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="jwtConstants"></a>
+                        <span class="name">
+                            <b>
+                            jwtConstants</b>
+                            <a href="#jwtConstants"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  secret: &#x27;ZXBpdGVjaCBpcyA0Mg&#x3D;&#x3D;&#x27;,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/mocks/user.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listUsersMocked"></a>
+                        <span class="name">
+                            <b>
+                            listUsersMocked</b>
+                            <a href="#listUsersMocked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  { id: 1, login: &#x27;test&#x27; },
+  { id: 2, login: &#x27;test2&#x27; },
+]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userMocked"></a>
+                        <span class="name">
+                            <b>
+                            userMocked</b>
+                            <a href="#userMocked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  id: 1,
+  login: &#x27;test&#x27;,
+  password: &#x27;testtest&#x27;,
+  mail: &#x27;test@mail.fr&#x27;,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="usersMocked"></a>
+                        <span class="name">
+                            <b>
+                            usersMocked</b>
+                            <a href="#usersMocked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  { id: 1, login: &#x27;test&#x27;, password: &#x27;test&#x27;, mail: &#x27;test@mail.fr&#x27; },
+  { id: 2, login: &#x27;test2&#x27;, password: &#x27;test2&#x27;, mail: &#x27;test2@mail.fr&#x27; },
+]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/mocks/imagePermissions.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="permissionsMocked"></a>
+                        <span class="name">
+                            <b>
+                            permissionsMocked</b>
+                            <a href="#permissionsMocked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Record[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  {
+    image: imageMocked,
+  },
+]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/mocks/typeorm.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setTypeormRepoMocked"></a>
+                        <span class="name">
+                            <b>
+                            setTypeormRepoMocked</b>
+                            <a href="#setTypeormRepoMocked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(
+  getManyMocked: Record&lt;string, unknown&gt;[] &#x3D; undefined,
+  getOneMocked: Record&lt;string, unknown&gt; &#x3D; undefined,
+) &#x3D;&gt;
+  jest.fn().mockReturnValue({
+    createQueryBuilder: jest.fn().mockReturnValue({
+      getMany: jest.fn().mockReturnValue(getManyMocked),
+      getOne: jest.fn().mockResolvedValue(getOneMocked),
+      where: jest.fn().mockReturnThis(),
+      andWhere: jest.fn().mockReturnThis(),
+      leftJoinAndSelect: jest.fn().mockReturnThis(),
+      insert: jest.fn().mockReturnThis(),
+      into: jest.fn().mockReturnThis(),
+      values: jest.fn().mockReturnThis(),
+      execute: jest.fn().mockReturnThis(),
+      update: jest.fn().mockReturnThis(),
+      set: jest.fn().mockReturnThis(),
+      delete: jest.fn().mockReturnThis(),
+      from: jest.fn().mockReturnThis(),
+    }),
+  })</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_photo"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/photo_label" />
+
+    <item
+        android:id="@+id/navigation_feed"
+        android:icon="@drawable/feed_icon"
+        android:title="@string/feed_label" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/account_icon"
+        android:title="@string/account_label" />
+
+</menu>

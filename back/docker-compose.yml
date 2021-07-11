@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  api:
+    # image: thomas-oliver/nestjs-dockerized
+    build:
+      dockerfile: Dockerfile
+      context: .
+    depends_on:
+      - postgres
+    env_file:
+      - dev.env
+    environment:
+      NODE_ENV: development
+    ports:
+      - '8080:8080'
+
+  postgres:
+    image: postgres:10.4
+    ports:
+      - '35000:5432'
+    env_file:
+      - dev.env
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - postgres
+    ports:
+      - '5555:80'
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    links:
+      - 'postgres:pgsql-server'
+    env_file:
+      - dev.env
+    restart: unless-stopped
+
+volumes:
+  db-data:
+  pgadmin-data:
